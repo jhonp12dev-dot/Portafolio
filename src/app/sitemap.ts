@@ -3,7 +3,10 @@ import { MetadataRoute } from "next";
 const locales = ["es", "en", "pt", "zh", "ko", "ru"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jhonpillaca.dev";
+  const siteUrl = 
+    process.env.NEXT_PUBLIC_SITE_URL || 
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null) || 
+    "https://jhonpillaca.vercel.app";
   
   const sitemapEntries = locales.map((locale) => ({
     url: `${siteUrl}/${locale}`,
