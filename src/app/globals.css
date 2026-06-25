@@ -20,7 +20,7 @@
 
   --text-primary:  #F1F5F9;
   --text-secondary:#94A3B8;
-  --text-muted:    #64748B;
+  --text-muted:    #8091A5;
 
   --border:       rgba(255,255,255,0.07);
   --border-hover: rgba(255,255,255,0.14);
@@ -1096,3 +1096,79 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ── LANGUAGE SELECTOR ────────────────────────────────────────────── */
+.lang-selector-container {
+  position: relative;
+  display: inline-block;
+}
+.lang-selector-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lang-selector-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-hover);
+}
+.lang-chevron {
+  transition: transform 0.2s;
+}
+.lang-chevron.open {
+  transform: rotate(180deg);
+}
+.lang-code-text {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.lang-dropdown-list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 6px;
+  list-style: none;
+  z-index: 100;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.lang-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-option-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+.lang-option-btn.active {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--green);
+}
+

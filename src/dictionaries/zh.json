@@ -1,0 +1,205 @@
+{
+  "navbar": {
+    "about": "关于我",
+    "experience": "专业经历",
+    "projects": "项目经验",
+    "skills": "技术栈",
+    "education": "教育背景",
+    "contact": "联系我"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "Jhon Pillaca",
+    "lastName": "Jananpa",
+    "roles": ["全栈开发", "Angular 专家", "NestJS 开发者", "AI 构建者", "后端架构师"],
+    "roleStatic": "软件开发工程师 ",
+    "status": "可约机",
+    "statusLabel": "可接受新工作/项目",
+    "bio": "+5 年使用 Angular、NestJS 和 Spring Boot 构建可扩展 Web 应用的经验。热衷于人工智能、自动化以及构建具有实际影响力的解决方案。",
+    "ctaProjects": "查看项目",
+    "ctaContact": "联系我",
+    "scroll": "向下滑动",
+    "avatarAlt": "Jhon Pillaca Jananpa 的照片"
+  },
+  "about": {
+    "tag": "关于我",
+    "title": "个人简介",
+    "lead": "拥有5年以上开发经验的全栈开发人员，专注于 Angular、NestJS、Spring Boot 和基于人工智能的解决方案。",
+    "body": "积极主动，具备优秀的自学能力，致力于构建具有实际社会和商业价值的项目。对流程自动化、人工智能代理（AI Agents）以及设计用于解决复杂问题的可扩展架构充满热情。",
+    "languages": {
+      "spanish": "西班牙语",
+      "quechua": "克丘亚语",
+      "english": "英语",
+      "native": "母语",
+      "basic": "基础"
+    },
+    "stats": {
+      "years": "工作年限",
+      "projects": "交付项目",
+      "tech": "掌握技术",
+      "companies": "服务企业"
+    }
+  },
+  "experience": {
+    "tag": "职业轨迹",
+    "title": "专业经历",
+    "currentBadge": "至今",
+    "positions": [
+      {
+        "role": "全栈开发人员",
+        "company": "JLH Corredores de Seguros (JLH 保险经纪)",
+        "date": "2024年6月 — 2026年5月",
+        "isCurrent": true,
+        "tasks": [
+          "积极开发 Codex（基于微服务和 Angular 微前端架构的企业级多租户平台）和 Zentra（结合 NestJS、Next.js 和 AI 代理的临床与运营系统）。",
+          "设计并构建 Angular 企业级组件库 gco-ui-library，实现前端生态系统的视觉和模块化标准化。",
+          "集成 Supabase 实现身份验证和数据存储。深入管理 MongoDB 和 PostgreSQL 数据库。",
+          "使用 Model Context Protocol (MCP) 开发 AI 代理，并集成大语言模型以实现流程自动化。",
+          "构建 JLH 保险经纪系统，集成 OCR、RAG、多模态语言模型 (MLL) 和用于保单处理的 Python 脚本。"
+        ]
+      },
+      {
+        "role": "全栈开发人员",
+        "company": "Lidera Software",
+        "date": "2022年7月 — 2024年5月",
+        "isCurrent": false,
+        "tasks": [
+          "使用前端 Angular 和后端 Spring Boot 开发多租户财务管理及会计软件。",
+          "构建 REST API 并针对 MySQL 中的复杂查询进行深度性能优化。",
+          "使用 GitLab 进行敏捷团队协作与版本控制。"
+        ]
+      },
+      {
+        "role": "前端开发人员",
+        "company": "Grupo TCI",
+        "date": "2021年5月 — 2022年6月",
+        "isCurrent": false,
+        "tasks": [
+          "在 Angular 中开发可复用的高质量组件并对接 REST API。",
+          "使用 HTML5 和 CSS 设计像素级还原的响应式用户界面。"
+        ]
+      },
+      {
+        "role": "前端程序员",
+        "company": "Sonder Shop",
+        "date": "2021年2月 — 2021年5月",
+        "isCurrent": false,
+        "tasks": [
+          "在 SCRUM 敏捷开发方法下进行用户界面设计和 Web 前端开发。"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "tag": "工作成果",
+    "title": "精选项目",
+    "wipBadge": "开发中",
+    "wipLink": "活跃开发中",
+    "imgAltPrefix": "预览",
+    "filters": {
+      "all": "全部",
+      "active": "开发中",
+      "web": "Web端",
+      "ai": "AI与自动化",
+      "backend": "后端/服务"
+    },
+    "list": [
+      {
+        "title": "Codex",
+        "desc": "基于微服务和微前端的企业级多租户平台及基础设施，集成了 gco-ui-library 组件库和 Angular 模块化管理控制台壳体。"
+      },
+      {
+        "title": "Zentra",
+        "desc": "现代化临床与运营管理系统，包含入职培训、患者管理、交互式计费以及基于 AI 代理的智能自动化模块。后端采用 NestJS 微服务架构，前端采用 Next.js。"
+      },
+      {
+        "title": "GCO UI Library",
+        "desc": "基于 front/gco-ui-library 的企业级 Angular 组件库，包含交互式文档 (gco-ui-docs)。包含按钮、表格、带校验的响应式表单、弹窗以及可定制的主题。"
+      },
+      {
+        "title": "JLH 保险经纪系统",
+        "desc": "具备强大数据库支持的综合性保险服务平台。集成了用于保单 OCR 分析、条款文档 RAG 检索、智能 AI 代理和多模态语言模型 (MLL) 的先进人工智能能力。"
+      },
+      {
+        "title": "基于 MCP 的 AI 代理",
+        "desc": "利用 Model Context Protocol (MCP) 开发人工智能代理以实现企业业务流程自动化。对接 OpenAI API 并集成 RAG 检索增强生成系统。"
+      },
+      {
+        "title": "Lidera Software",
+        "desc": "用于企业财务控制的多租户会计软件。采用 Angular 前端和 Spring Boot 后端，在 MySQL 中设计了可扩展的多租户数据库架构以确保数据的安全隔离。"
+      }
+    ]
+  },
+  "skills": {
+    "tag": "核心技术",
+    "title": "技术栈",
+    "barsTitle": "掌握程度",
+    "categories": {
+      "frontend": "前端开发",
+      "backend": "后端服务",
+      "databases": "数据库",
+      "ai": "AI 与自动化",
+      "tools": "工程工具",
+      "methodologies": "开发方法论与架构"
+    },
+    "bars": {
+      "angular": "Angular / TypeScript",
+      "nestjs": "NestJS / Node.js",
+      "nextjs": "Next.js",
+      "spring": "Java / Spring Boot",
+      "databases": "数据库 (SQL/NoSQL)",
+      "ai": "AI 与自动化"
+    }
+  },
+  "education": {
+    "tag": "教育经历",
+    "title": "教育背景",
+    "list": [
+      {
+        "title": "全栈 Web 开发硕士学位",
+        "institution": "Escuela Internacional de Post Grado (国际研究生学校)",
+        "year": "2021年 — 2023年"
+      },
+      {
+        "title": "计算机与信息科学技术员",
+        "institution": "IESTP \"María Rosario Araoz Pinto\" — 网页设计、面向对象编程、数据库、敏捷方法论",
+        "year": "2019年"
+      },
+      {
+        "title": "Angular 8+ 课程 (基础至中级)",
+        "institution": "Udemy",
+        "year": "2020年"
+      }
+    ]
+  },
+  "contact": {
+    "tag": "联系方式",
+    "title": "与我联络",
+    "sub": "想了解合作机会或共同开发项目？我随时保持开放的态度。",
+    "labels": {
+      "name": "姓名",
+      "email": "电子邮箱",
+      "phone": "联系电话（选填）",
+      "message": "留言内容",
+      "namePlaceholder": "您的全名",
+      "emailPlaceholder": "example@email.com",
+      "phonePlaceholder": "您的电话号码",
+      "messagePlaceholder": "请简要描述您的项目或需求...",
+      "submit": "发送消息",
+      "sending": "发送中...",
+      "success": "消息发送成功！我将尽快给您答复。",
+      "whatsappMessage": "你好 Jhon，我看到了你的作品集，想与你取得联系。"
+    },
+    "errors": {
+      "name": "姓名不能为空",
+      "emailRequired": "电子邮箱不能为空",
+      "emailInvalid": "请输入有效的电子邮箱地址",
+      "phoneInvalid": "请输入有效的电话号码",
+      "message": "留言内容不能为空",
+      "connection": "无法连接到服务器，请检查您的网络连接。"
+    }
+  },
+  "footer": {
+    "copy": "© 2026 Jhon Pillaca Jananpa. 基于 Next.js & TS 构建."
+  }
+}

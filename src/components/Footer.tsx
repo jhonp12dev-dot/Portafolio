@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer" role="contentinfo">
       <div className="container">
         <div className="footer-inner">
-          <span className="footer-copy">© 2026 Jhon Pillaca Jananpa. Construido con Next.js & TS.</span>
+          <span className="footer-copy">© 2026 Jhon Pillaca Jananpa.</span>
           <div className="footer-socials">
             <a href="https://linkedin.com/in/jhonpillaca" target="_blank" rel="noopener noreferrer" className="footer-social" aria-label="LinkedIn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

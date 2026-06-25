@@ -1,0 +1,205 @@
+{
+  "navbar": {
+    "about": "Perfil",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "skills": "Habilidades",
+    "education": "Educação",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, sou",
+    "name": "Jhon Pillaca",
+    "lastName": "Jananpa",
+    "roles": ["Full Stack", "Angular Expert", "NestJS Dev", "AI Builder", "Backend Arch."],
+    "roleStatic": "Desenvolvedor ",
+    "status": "Disponível",
+    "statusLabel": "Disponível para trabalhar",
+    "bio": "+5 anos construindo aplicações web escaláveis com Angular, NestJS e Spring Boot. Apaixonado por IA, automação e desenvolvimento de soluções com impacto real.",
+    "ctaProjects": "Ver Projetos",
+    "ctaContact": "Entrar em Contato",
+    "scroll": "scroll",
+    "avatarAlt": "Foto de Jhon Pillaca Jananpa"
+  },
+  "about": {
+    "tag": "Sobre mim",
+    "title": "Perfil Profissional",
+    "lead": "Desenvolvedor Full Stack com mais de 5 anos de experiência, especializado em Angular, NestJS, Spring Boot e soluções baseadas em Inteligência Artificial.",
+    "body": "Proativo, autodidata e motivado para construir projetos com impacto real. Sou apaixonado por automação de processos, agentes de IA e criação de arquiteturas escaláveis que resolvem problemas complexos.",
+    "languages": {
+      "spanish": "Espanhol",
+      "quechua": "Quíchua",
+      "english": "Inglês",
+      "native": "Nativo",
+      "basic": "Básico"
+    },
+    "stats": {
+      "years": "Anos de experiência",
+      "projects": "Projetos entregues",
+      "tech": "Tecnologias dominadas",
+      "companies": "Empresas"
+    }
+  },
+  "experience": {
+    "tag": "Trajetória",
+    "title": "Experiência Profissional",
+    "currentBadge": "Atual",
+    "positions": [
+      {
+        "role": "Desenvolvedor Full Stack",
+        "company": "JLH Corredores de Seguros",
+        "date": "Jun 2024 — Maio 2026",
+        "isCurrent": true,
+        "tasks": [
+          "Desenvolvimento ativo do Codex (plataforma enterprise multi-tenant sob arquitetura de microserviços e microfrontends Angular) e Zentra (sistema clínico e operacional com NestJS, Next.js e agentes de IA).",
+          "Design e construção da biblioteca de componentes gco-ui-library em Angular para padronização visual e modular do ecossistema frontend.",
+          "Integração do Supabase para autenticação e armazenamento de dados. Administração avançada de MongoDB e PostgreSQL.",
+          "Desenvolvimento de agentes de IA com MCP (Model Context Protocol) e integração de modelos de IA para automação de fluxos.",
+          "Construção do sistema JLH Corredores Seguros com integração de OCR, RAG, MLL e scripts em Python para processamento de apólices."
+        ]
+      },
+      {
+        "role": "Desenvolvedor Full Stack",
+        "company": "Lidera Software",
+        "date": "Jul 2022 — Maio 2024",
+        "isCurrent": false,
+        "tasks": [
+          "Desenvolvimento de software contábil multi-tenant com Angular no frontend e Spring Boot no backend.",
+          "Construção de APIs REST e otimização de consultas complexas no MySQL.",
+          "Trabalho colaborativo e controle de versão usando o GitLab."
+        ]
+      },
+      {
+        "role": "Desenvolvedor Frontend",
+        "company": "Grupo TCI",
+        "date": "Maio 2021 — Jun 2022",
+        "isCurrent": false,
+        "tasks": [
+          "Desenvolvimento de componentes reutilizáveis em Angular e consumo de APIs REST.",
+          "Design de interfaces responsivas com HTML5 e CSS."
+        ]
+      },
+      {
+        "role": "Programador Frontend",
+        "company": "Sonder Shop",
+        "date": "Fev 2021 — Maio 2021",
+        "isCurrent": false,
+        "tasks": [
+          "Design de interfaces de usuário e desenvolvimento web com HTML, CSS e JavaScript sob metodologia SCRUM."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "tag": "Trabalho",
+    "title": "Projetos em Destaque",
+    "wipBadge": "Em Progresso",
+    "wipLink": "Desenvolvimento ativo",
+    "imgAltPrefix": "Visualização de",
+    "filters": {
+      "all": "Todos",
+      "active": "Em Progresso",
+      "web": "Web",
+      "ai": "IA & Automação",
+      "backend": "Backend"
+    },
+    "list": [
+      {
+        "title": "Codex",
+        "desc": "Plataforma enterprise multi-tenant e infraestrutura baseada em microserviços e microfrontends, incluindo a integração da biblioteca de componentes gco-ui-library e shell de administração modular em Angular."
+      },
+      {
+        "title": "Zentra",
+        "desc": "Sistema clínico e operacional moderno com módulos de onboarding, gestão de pacientes, faturamento interativo e automações inteligentes com agentes de IA. Arquitetura de microserviços desenvolvida com NestJS e frontend com Next.js."
+      },
+      {
+        "title": "GCO UI Library",
+        "desc": "Biblioteca de componentes Angular enterprise (gco-ui-library) baseada em front/gco-ui-library com documentação interativa (gco-ui-docs). Inclui botões, tabelas, formulários reativos com validações, modais e temas personalizáveis."
+      },
+      {
+        "title": "JLH Corredores Seguros",
+        "desc": "Plataforma integral de seguros com banco de dados robusto e recursos avançados de Inteligência Artificial para análise OCR de apólices, RAG com documentação de planos, agentes de IA automatizados e modelos de linguagem multimodal (MLL)."
+      },
+      {
+        "title": "Agentes IA com MCP",
+        "desc": "Desenvolvimento de agentes de inteligência artificial usando o Model Context Protocol (MCP) para automação de processos empresariais. Integração com APIs da OpenAI e sistemas RAG."
+      },
+      {
+        "title": "Lidera Software",
+        "desc": "Software contábil multi-tenant para controle financeiro empresarial. Frontend em Angular e backend em Spring Boot com arquitetura escalável de banco de dados multi-tenant no MySQL para isolamento seguro de dados."
+      }
+    ]
+  },
+  "skills": {
+    "tag": "Tecnologia",
+    "title": "Stack Técnico",
+    "barsTitle": "Nível de domínio",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bancos de Dados",
+      "ai": "IA & Automação",
+      "tools": "Ferramentas",
+      "methodologies": "Metodologias & Arquitetura"
+    },
+    "bars": {
+      "angular": "Angular / TypeScript",
+      "nestjs": "NestJS / Node.js",
+      "nextjs": "Next.js",
+      "spring": "Java / Spring Boot",
+      "databases": "Bancos de Dados (SQL/NoSQL)",
+      "ai": "IA & Automação"
+    }
+  },
+  "education": {
+    "tag": "Formação",
+    "title": "Educação",
+    "list": [
+      {
+        "title": "Mestrado em Desenvolvimento Web Full-Stack",
+        "institution": "Escuela Internacional de Post Grado",
+        "year": "2021 — 2023"
+      },
+      {
+        "title": "Técnico em Computação e Informática",
+        "institution": "IESTP \"María Rosario Araoz Pinto\" — Web Design, POO, Bancos de Dados, Metodologias Ágeis",
+        "year": "2019"
+      },
+      {
+        "title": "Curso Angular 8+ (Nível Básico — Intermédio)",
+        "institution": "Udemy",
+        "year": "2020"
+      }
+    ]
+  },
+  "contact": {
+    "tag": "Contato",
+    "title": "Vamos Conversar",
+    "sub": "Tem um projeto em mente? Estou disponível para novas oportunidades.",
+    "labels": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone / Celular (opcional)",
+      "message": "Mensagem",
+      "namePlaceholder": "Seu nome completo",
+      "emailPlaceholder": "seu@email.com",
+      "phonePlaceholder": "Seu número de celular",
+      "messagePlaceholder": "Conte-me sobre o seu projeto...",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada! Responderei em breve.",
+      "whatsappMessage": "Olá Jhon, vi seu portfólio e gostaria de entrar em contato."
+    },
+    "errors": {
+      "name": "O nome é obrigatório",
+      "emailRequired": "O e-mail é obrigatório",
+      "emailInvalid": "O e-mail não é válido",
+      "phoneInvalid": "O número de telefone não é válido",
+      "message": "A mensagem não pode estar vazia",
+      "connection": "Não foi possível conectar ao servidor. Verifique sua conexão."
+    }
+  },
+  "footer": {
+    "copy": "© 2026 Jhon Pillaca Jananpa. Construído com Next.js & TS."
+  }
+}

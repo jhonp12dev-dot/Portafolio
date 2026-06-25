@@ -2,7 +2,37 @@
 
 import { useState } from "react";
 
-export default function Contact() {
+interface ContactProps {
+  dict: {
+    tag: string;
+    title: string;
+    sub: string;
+    labels: {
+      name: string;
+      email: string;
+      phone: string;
+      message: string;
+      namePlaceholder: string;
+      emailPlaceholder: string;
+      phonePlaceholder: string;
+      messagePlaceholder: string;
+      submit: string;
+      sending: string;
+      success: string;
+      whatsappMessage: string;
+    };
+    errors: {
+      name: string;
+      emailRequired: string;
+      emailInvalid: string;
+      phoneInvalid: string;
+      message: string;
+      connection: string;
+    };
+  };
+}
+
+export default function Contact({ dict }: ContactProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -13,16 +43,16 @@ export default function Contact() {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!name.trim()) newErrors.name = "El nombre es obligatorio";
+    if (!name.trim()) newErrors.name = dict.errors.name;
     if (!email.trim()) {
-      newErrors.email = "El correo es obligatorio";
+      newErrors.email = dict.errors.emailRequired;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = "El correo no es válido";
+      newErrors.email = dict.errors.emailInvalid;
     }
     if (phone.trim() && !/^[+0-9\s-]{7,15}$/.test(phone.trim())) {
-      newErrors.phone = "El número de teléfono no es válido";
+      newErrors.phone = dict.errors.phoneInvalid;
     }
-    if (!message.trim()) newErrors.message = "El mensaje no puede estar vacío";
+    if (!message.trim()) newErrors.message = dict.errors.message;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -59,7 +89,7 @@ export default function Contact() {
         setErrors({ submit: data.error || "Hubo un error al enviar el mensaje. Inténtalo de nuevo." });
       }
     } catch (err) {
-      setErrors({ submit: "No se pudo conectar con el servidor. Revisa tu conexión." });
+      setErrors({ submit: dict.errors.connection });
     } finally {
       setLoading(false);
     }
@@ -68,9 +98,9 @@ export default function Contact() {
   return (
     <section id="contact" className="section contact" aria-labelledby="contact-heading">
       <div className="container">
-        <div className="section-tag">Contacto</div>
-        <h2 id="contact-heading" className="section-title">Hablemos</h2>
-        <p className="contact-sub">¿Tienes un proyecto en mente? Estoy disponible para nuevas oportunidades.</p>
+        <div className="section-tag">{dict.tag}</div>
+        <h2 id="contact-heading" className="section-title">{dict.title}</h2>
+        <p className="contact-sub">{dict.sub}</p>
 
         <div className="contact-grid">
           <div className="contact-info">
@@ -86,7 +116,7 @@ export default function Contact() {
                 <span className="contact-value">jhonspillaca12@gmail.com</span>
               </div>
             </a>
-            <a href="https://wa.me/51989313705?text=Hola%20Jhon,%20vi%20tu%20portafolio%20y%20me%20gustaría%20contactarte." target="_blank" rel="noopener noreferrer" className="contact-item" id="contactWhatsapp">
+            <a href={`https://wa.me/51989313705?text=${encodeURIComponent(dict.labels.whatsappMessage)}`} target="_blank" rel="noopener noreferrer" className="contact-item" id="contactWhatsapp">
               <div className="contact-item-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.455 5.703 1.455h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -112,13 +142,13 @@ export default function Contact() {
 
           <form className="contact-form" id="contactForm" onSubmit={handleSubmit} noValidate aria-label="Formulario de contacto">
             <div className="form-group">
-              <label htmlFor="formName" className="form-label">Nombre</label>
+              <label htmlFor="formName" className="form-label">{dict.labels.name}</label>
               <input
                 type="text"
                 id="formName"
                 name="name"
                 className="form-input"
-                placeholder="Tu nombre completo"
+                placeholder={dict.labels.namePlaceholder}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoComplete="name"
@@ -127,13 +157,13 @@ export default function Contact() {
               {errors.name && <span style={{ color: "#ef4444", fontSize: "0.8rem", marginTop: "4px" }}>{errors.name}</span>}
             </div>
             <div className="form-group">
-              <label htmlFor="formEmail" className="form-label">Email</label>
+              <label htmlFor="formEmail" className="form-label">{dict.labels.email}</label>
               <input
                 type="email"
                 id="formEmail"
                 name="email"
                 className="form-input"
-                placeholder="tu@email.com"
+                placeholder={dict.labels.emailPlaceholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
@@ -142,13 +172,13 @@ export default function Contact() {
               {errors.email && <span style={{ color: "#ef4444", fontSize: "0.8rem", marginTop: "4px" }}>{errors.email}</span>}
             </div>
             <div className="form-group">
-              <label htmlFor="formPhone" className="form-label">Teléfono / Celular (opcional)</label>
+              <label htmlFor="formPhone" className="form-label">{dict.labels.phone}</label>
               <input
                 type="tel"
                 id="formPhone"
                 name="phone"
                 className="form-input"
-                placeholder="Tu número de celular"
+                placeholder={dict.labels.phonePlaceholder}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 autoComplete="tel"
@@ -156,12 +186,12 @@ export default function Contact() {
               {errors.phone && <span style={{ color: "#ef4444", fontSize: "0.8rem", marginTop: "4px" }}>{errors.phone}</span>}
             </div>
             <div className="form-group">
-              <label htmlFor="formMessage" className="form-label">Mensaje</label>
+              <label htmlFor="formMessage" className="form-label">{dict.labels.message}</label>
               <textarea
                 id="formMessage"
                 name="message"
                 className="form-input form-textarea"
-                placeholder="Cuéntame sobre tu proyecto..."
+                placeholder={dict.labels.messagePlaceholder}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={5}
@@ -184,14 +214,14 @@ export default function Contact() {
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
-              {loading ? "Enviando..." : "Enviar Mensaje"}
+              {loading ? dict.labels.sending : dict.labels.submit}
             </button>
             {success && (
               <div className="form-success" id="formSuccess" role="alert" aria-live="polite" style={{ display: "flex" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                ¡Mensaje enviado! Te responderé pronto.
+                {dict.labels.success}
               </div>
             )}
           </form>

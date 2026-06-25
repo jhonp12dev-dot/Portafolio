@@ -1,29 +1,45 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
-const ROLES = ["Full Stack", "Angular Expert", "NestJS Dev", "AI Builder", "Backend Arch."];
+interface HeroProps {
+  dict: {
+    greeting: string;
+    name: string;
+    lastName: string;
+    roles: string[];
+    roleStatic: string;
+    status: string;
+    statusLabel: string;
+    bio: string;
+    ctaProjects: string;
+    ctaContact: string;
+    scroll: string;
+    avatarAlt: string;
+  };
+}
 
-export default function Hero() {
+export default function Hero({ dict }: HeroProps) {
   const [roleIdx, setRoleIdx] = useState(0);
-  const [roleText, setRoleText] = useState(ROLES[0]);
   const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    // Reset index when language changes
+    setRoleIdx(0);
+  }, [dict.roles]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(false);
       setTimeout(() => {
-        setRoleIdx((prev) => {
-          const next = (prev + 1) % ROLES.length;
-          setRoleText(ROLES[next]);
-          return next;
-        });
+        setRoleIdx((prev) => (prev + 1) % dict.roles.length);
         setFade(true);
       }, 300);
     }, 2600);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [dict.roles]);
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -43,21 +59,27 @@ export default function Hero() {
       <div className="hero-content">
         <div className="hero-avatar-wrap">
           <div className="hero-avatar-ring" aria-hidden="true"></div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="avatar.png" alt="Foto de Jhon Pillaca Jananpa" className="hero-avatar" width="160" height="160" />
-          <div className="hero-status" aria-label="Disponible para trabajar">
+          <Image 
+            src="/avatar.jpg" 
+            alt={dict.avatarAlt} 
+            className="hero-avatar" 
+            width={160} 
+            height={160} 
+            priority
+          />
+          <div className="hero-status" aria-label={dict.statusLabel}>
             <span className="status-dot"></span>
-            Disponible
+            {dict.status}
           </div>
         </div>
 
         <div className="hero-text">
-          <p className="hero-greeting reveal-up">Hola, soy</p>
+          <p className="hero-greeting reveal-up">{dict.greeting}</p>
           <h1 className="hero-name reveal-up" style={{ "--delay": ".1s" } as React.CSSProperties}>
-            Jhon Pillaca<br /><span className="name-accent">Jananpa</span>
+            {dict.name}<br /><span className="name-accent">{dict.lastName}</span>
           </h1>
           <div className="hero-roles reveal-up" style={{ "--delay": ".2s" } as React.CSSProperties} aria-live="polite">
-            <span className="role-static">Desarrollador </span>
+            <span className="role-static">{dict.roleStatic}</span>
             <span 
               className="role-cycle" 
               style={{
@@ -67,12 +89,11 @@ export default function Hero() {
                 display: "inline-block"
               }}
             >
-              {roleText}
+              {dict.roles[roleIdx] || dict.roles[0]}
             </span>
           </div>
           <p className="hero-bio reveal-up" style={{ "--delay": ".3s" } as React.CSSProperties}>
-            +5 años construyendo aplicaciones web escalables con Angular, NestJS y Spring Boot.
-            Apasionado por la IA, la automatización y el desarrollo de soluciones con impacto real.
+            {dict.bio}
           </p>
           <div className="hero-actions reveal-up" style={{ "--delay": ".4s" } as React.CSSProperties}>
             <a href="#projects" className="btn btn-primary" onClick={(e) => handleSmoothScroll(e, "#projects")} id="heroProjectsBtn">
@@ -80,13 +101,13 @@ export default function Hero() {
                 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
-              Ver Proyectos
+              {dict.ctaProjects}
             </a>
             <a href="#contact" className="btn btn-ghost" onClick={(e) => handleSmoothScroll(e, "#contact")} id="heroContactBtn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
-              Contactar
+              {dict.ctaContact}
             </a>
           </div>
           <div className="hero-socials reveal-up" style={{ "--delay": ".5s" } as React.CSSProperties}>
@@ -115,7 +136,7 @@ export default function Hero() {
         const target = document.querySelector("#about");
         if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
       }} style={{ cursor: "pointer" }}>
-        <span>scroll</span>
+        <span>{dict.scroll}</span>
         <div className="scroll-line"></div>
       </div>
     </section>

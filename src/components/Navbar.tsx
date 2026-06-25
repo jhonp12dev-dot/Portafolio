@@ -1,19 +1,31 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import LanguageSelector from "./LanguageSelector";
 
-const NAV_LINKS = [
-  { label: "Perfil", href: "#about" },
-  { label: "Experiencia", href: "#experience" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Formación", href: "#education" },
-];
+interface NavbarProps {
+  dict: {
+    about: string;
+    experience: string;
+    projects: string;
+    skills: string;
+    education: string;
+    contact: string;
+  };
+}
 
-export default function Navbar() {
+export default function Navbar({ dict }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+
+  const NAV_LINKS = [
+    { label: dict.about, href: "#about" },
+    { label: dict.experience, href: "#experience" },
+    { label: dict.projects, href: "#projects" },
+    { label: dict.skills, href: "#skills" },
+    { label: dict.education, href: "#education" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,8 +101,11 @@ export default function Navbar() {
                 onClick={(e) => handleLinkClick(e, "#contact")}
                 style={{ color: activeSection === "contact" ? "var(--green)" : "" }}
               >
-                Contacto
+                {dict.contact}
               </a>
+            </li>
+            <li className="nav-lang-item" style={{ display: "flex", alignItems: "center", marginLeft: "12px" }}>
+              <LanguageSelector />
             </li>
           </ul>
           <button
@@ -106,7 +121,7 @@ export default function Navbar() {
       </nav>
 
       {/* MOBILE MENU */}
-      <div className={`mobile-menu ${isOpen ? "open" : ""}`} id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+      <div className={`mobile-menu ${isOpen ? "open" : ""}`} id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú móvil" aria-hidden={!isOpen}>
         <ul role="list">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
@@ -117,11 +132,15 @@ export default function Navbar() {
           ))}
           <li>
             <a href="#contact" className="mobile-link" onClick={(e) => handleLinkClick(e, "#contact")}>
-              Contacto
+              {dict.contact}
             </a>
+          </li>
+          <li style={{ marginTop: "24px" }}>
+            <LanguageSelector />
           </li>
         </ul>
       </div>
     </>
   );
 }
+

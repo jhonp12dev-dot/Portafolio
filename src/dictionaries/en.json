@@ -1,0 +1,205 @@
+{
+  "navbar": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "name": "Jhon Pillaca",
+    "lastName": "Jananpa",
+    "roles": ["Full Stack", "Angular Expert", "NestJS Dev", "AI Builder", "Backend Arch."],
+    "roleStatic": "Developer ",
+    "status": "Available",
+    "statusLabel": "Available to work",
+    "bio": "+5 years building scalable web applications with Angular, NestJS, and Spring Boot. Passionate about AI, automation, and building solutions with real impact.",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact Me",
+    "scroll": "scroll",
+    "avatarAlt": "Photo of Jhon Pillaca Jananpa"
+  },
+  "about": {
+    "tag": "About me",
+    "title": "Professional Profile",
+    "lead": "Full Stack Developer with over 5 years of experience, specialized in Angular, NestJS, Spring Boot, and Artificial Intelligence solutions.",
+    "body": "Proactive, self-taught, and driven to build projects with real-world impact. I am passionate about process automation, AI agents, and designing scalable architectures to solve complex problems.",
+    "languages": {
+      "spanish": "Spanish",
+      "quechua": "Quechua",
+      "english": "English",
+      "native": "Native",
+      "basic": "Basic"
+    },
+    "stats": {
+      "years": "Years of experience",
+      "projects": "Projects delivered",
+      "tech": "Technologies mastered",
+      "companies": "Companies"
+    }
+  },
+  "experience": {
+    "tag": "Timeline",
+    "title": "Professional Experience",
+    "currentBadge": "Present",
+    "positions": [
+      {
+        "role": "Full Stack Developer",
+        "company": "JLH Corredores de Seguros",
+        "date": "Jun 2024 — May 2026",
+        "isCurrent": true,
+        "tasks": [
+          "Active development of Codex (an enterprise multi-tenant platform built on a microservices and Angular microfrontends architecture) and Zentra (a clinical and operational system utilizing NestJS, Next.js, and AI agents).",
+          "Design and construction of the gco-ui-library component library in Angular to standardize modular visual components across the frontend ecosystem.",
+          "Integration of Supabase for authentication and database management. Advanced administration of MongoDB and PostgreSQL.",
+          "Development of AI agents using Model Context Protocol (MCP) and integration of LLMs for workflow automation.",
+          "Development of the JLH insurance brokerage platform integrating OCR, RAG, MLL, and Python scripts for policy processing."
+        ]
+      },
+      {
+        "role": "Full Stack Developer",
+        "company": "Lidera Software",
+        "date": "Jul 2022 — May 2024",
+        "isCurrent": false,
+        "tasks": [
+          "Development of multi-tenant accounting software using Angular for the frontend and Spring Boot for the backend.",
+          "Construction of REST APIs and optimization of complex queries in MySQL.",
+          "Collaborative version control utilizing GitLab."
+        ]
+      },
+      {
+        "role": "Frontend Developer",
+        "company": "Grupo TCI",
+        "date": "May 2021 — Jun 2022",
+        "isCurrent": false,
+        "tasks": [
+          "Development of reusable components in Angular and integration with REST APIs.",
+          "Design of responsive web interfaces using HTML5 and CSS."
+        ]
+      },
+      {
+        "role": "Frontend Programmer",
+        "company": "Sonder Shop",
+        "date": "Feb 2021 — May 2021",
+        "isCurrent": false,
+        "tasks": [
+          "User interface design and web development using HTML, CSS, and JavaScript under SCRUM methodology."
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "tag": "Work",
+    "title": "Featured Projects",
+    "wipBadge": "In Progress",
+    "wipLink": "Active development",
+    "imgAltPrefix": "Preview of",
+    "filters": {
+      "all": "All",
+      "active": "In Progress",
+      "web": "Web",
+      "ai": "AI & Automation",
+      "backend": "Backend"
+    },
+    "list": [
+      {
+        "title": "Codex",
+        "desc": "An enterprise multi-tenant platform and infrastructure built on microservices and microfrontends, featuring the integration of the gco-ui-library component library and a modular administration shell in Angular."
+      },
+      {
+        "title": "Zentra",
+        "desc": "A modern clinical and operational system with onboarding modules, patient management, interactive billing, and smart automations powered by AI agents. Developed with NestJS microservices and Next.js frontend."
+      },
+      {
+        "title": "GCO UI Library",
+        "desc": "An enterprise Angular component library (gco-ui-library) based on front/gco-ui-library, including interactive documentation (gco-ui-docs). Features buttons, tables, reactive forms with validation, modals, and customizable themes."
+      },
+      {
+        "title": "JLH Corredores Seguros",
+        "desc": "A comprehensive insurance platform with a robust database and advanced AI capabilities for OCR policy analysis, RAG on coverage documentation, automated AI agents, and Multimodal Language Models (MLL)."
+      },
+      {
+        "title": "AI Agents with MCP",
+        "desc": "Development of artificial intelligence agents using the Model Context Protocol (MCP) for business process automation. Integration with OpenAI APIs and RAG systems."
+      },
+      {
+        "title": "Lidera Software",
+        "desc": "A multi-tenant accounting software for corporate financial control. Built with an Angular frontend, a Spring Boot backend, and a scalable multi-tenant MySQL database architecture for secure data isolation."
+      }
+    ]
+  },
+  "skills": {
+    "tag": "Technology",
+    "title": "Technical Stack",
+    "barsTitle": "Mastery level",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "ai": "AI & Automation",
+      "tools": "Tools",
+      "methodologies": "Methodologies & Architecture"
+    },
+    "bars": {
+      "angular": "Angular / TypeScript",
+      "nestjs": "NestJS / Node.js",
+      "nextjs": "Next.js",
+      "spring": "Java / Spring Boot",
+      "databases": "Databases (SQL/NoSQL)",
+      "ai": "AI & Automation"
+    }
+  },
+  "education": {
+    "tag": "Education",
+    "title": "Education",
+    "list": [
+      {
+        "title": "Master's Degree in Full-Stack Web Development",
+        "institution": "Escuela Internacional de Post Grado",
+        "year": "2021 — 2023"
+      },
+      {
+        "title": "Associate Degree in Computer Science",
+        "institution": "IESTP \"María Rosario Araoz Pinto\" — Web Design, OOP, Databases, Agile Methodologies",
+        "year": "2019"
+      },
+      {
+        "title": "Angular 8+ Course (Basic to Intermediate)",
+        "institution": "Udemy",
+        "year": "2020"
+      }
+    ]
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Let's Talk",
+    "sub": "Have a project in mind? I am available for new opportunities.",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone / Mobile (optional)",
+      "message": "Message",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "you@email.com",
+      "phonePlaceholder": "Your phone number",
+      "messagePlaceholder": "Tell me about your project...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! I will get back to you soon.",
+      "whatsappMessage": "Hello Jhon, I saw your portfolio and would like to contact you."
+    },
+    "errors": {
+      "name": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "phoneInvalid": "Phone number is invalid",
+      "message": "Message cannot be empty",
+      "connection": "Could not connect to server. Please check your connection."
+    }
+  },
+  "footer": {
+    "copy": "© 2026 Jhon Pillaca Jananpa. Built with Next.js & TS."
+  }
+}

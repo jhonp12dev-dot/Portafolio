@@ -2,26 +2,42 @@
 
 import { useEffect, useState, useRef } from "react";
 
-interface StatItem {
-  id: string;
-  target: number;
-  label: string;
+interface AboutProps {
+  dict: {
+    tag: string;
+    title: string;
+    lead: string;
+    body: string;
+    languages: {
+      spanish: string;
+      quechua: string;
+      english: string;
+      native: string;
+      basic: string;
+    };
+    stats: {
+      years: string;
+      projects: string;
+      tech: string;
+      companies: string;
+    };
+  };
 }
 
-const STATS: StatItem[] = [
-  { id: "statYears", target: 5, label: "Años de experiencia" },
-  { id: "statProjects", target: 12, label: "Proyectos entregados" },
-  { id: "statTech", target: 20, label: "Tecnologías dominadas" },
-  { id: "statCompanies", target: 4, label: "Empresas" },
-];
-
-export default function About() {
+export default function About({ dict }: AboutProps) {
   const [counts, setCounts] = useState<Record<string, number>>({
     statYears: 0,
     statProjects: 0,
     statTech: 0,
     statCompanies: 0,
   });
+
+  const STATS = [
+    { id: "statYears", target: 5, label: dict.stats.years },
+    { id: "statProjects", target: 12, label: dict.stats.projects },
+    { id: "statTech", target: 20, label: dict.stats.tech },
+    { id: "statCompanies", target: 4, label: dict.stats.companies },
+  ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const intervalsRef = useRef<NodeJS.Timeout[]>([]);
@@ -76,34 +92,34 @@ export default function About() {
       if (currentRef) observer.unobserve(currentRef);
       intervalsRef.current.forEach(clearInterval);
     };
-  }, []);
+  }, [dict]); // Re-run when dictionary changes
 
   return (
     <section id="about" className="section about" aria-labelledby="about-heading" ref={sectionRef}>
       <div className="container">
-        <div className="section-tag">Sobre mí</div>
-        <h2 id="about-heading" className="section-title">Perfil Profesional</h2>
+        <div className="section-tag">{dict.tag}</div>
+        <h2 id="about-heading" className="section-title">{dict.title}</h2>
 
         <div className="about-grid">
           <div className="about-text">
             <p className="about-lead">
-              Desarrollador Full Stack con más de 5 años de experiencia, especializado en Angular, NestJS, Spring Boot y soluciones basadas en Inteligencia Artificial.
+              {dict.lead}
             </p>
             <p className="about-body">
-              Proactivo, autodidacta y motivado por construir proyectos con impacto real. Me apasiona la automatización de procesos, el desarrollo de agentes IA y la creación de arquitecturas escalables que resuelvan problemas complejos.
+              {dict.body}
             </p>
             <div className="about-langs">
               <div className="lang-item">
-                <span className="lang-name">Español</span>
-                <span className="lang-level lang-native">Nativo</span>
+                <span className="lang-name">{dict.languages.spanish}</span>
+                <span className="lang-level lang-native">{dict.languages.native}</span>
               </div>
               <div className="lang-item">
-                <span className="lang-name">Quechua</span>
-                <span className="lang-level lang-native">Nativo</span>
+                <span className="lang-name">{dict.languages.quechua}</span>
+                <span className="lang-level lang-native">{dict.languages.native}</span>
               </div>
               <div className="lang-item">
-                <span className="lang-name">Inglés</span>
-                <span className="lang-level lang-basic">Básico</span>
+                <span className="lang-name">{dict.languages.english}</span>
+                <span className="lang-level lang-basic">{dict.languages.basic}</span>
               </div>
             </div>
           </div>
